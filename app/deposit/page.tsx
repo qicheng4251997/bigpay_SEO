@@ -71,7 +71,6 @@ export default function Deposit() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Header */}
       <header className="fixed top-0 left-0 w-full z-50 bg-gray-800 py-4 px-6">
         <div className="flex items-center justify-between">
 
