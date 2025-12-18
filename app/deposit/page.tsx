@@ -80,7 +80,7 @@ export default function Deposit() {
               <div className="flex items-center justify-center w-24 h-8 cursor-pointer">
                 <img
                   src="/home/BP_Logo.png"
-                  alt="Logo"
+                  alt="BigPay77"
                   className="max-w-full max-h-full object-contain rounded-lg"
                 />
               </div>
@@ -374,7 +374,7 @@ export default function Deposit() {
             <div className={`relative transform transition-all duration-1000 ${hoursVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
               <img 
                 src="/deposit/OperatingHour.png"
-                alt="24/7 Service"
+                alt="australia online casino & betting"
                 className="w-full h-auto object-cover rounded-lg shadow-xl"
               />
               <div className="absolute top-4 right-4 bg-green-400 text-gray-900 px-4 py-2 rounded-full font-semibold">
@@ -475,29 +475,35 @@ export default function Deposit() {
               '/deposit/pussy888.jpg',
               '/deposit/playtech.jpg'
             ].map((src, index) => (
-              <div
+              <Link
                 key={index}
-                className="relative w-full [aspect-ratio:21/9] rounded-2xl overflow-hidden bg-gray-800
-                          shadow-lg hover:shadow-cyan-400/20 transition-all duration-500 group"
+                href="https://bigpay77.net/register/SMSRegister"
+                className="block"
               >
-                {/* Image */}
-                <img
-                  src={src}
-                  alt={`Promotion ${index + 1}`}
-                  className="absolute inset-0 w-full h-full object-cover
-                            transition-transform duration-700 group-hover:scale-105"
-                />
+                <div
+                  className="relative w-full [aspect-ratio:21/9] rounded-2xl overflow-hidden bg-gray-800
+                            shadow-lg hover:shadow-cyan-400/20 transition-all duration-500
+                            group cursor-pointer"
+                >
+                  {/* Image */}
+                  <img
+                    src={src}
+                    alt={`Free Credit & Bonus Promotion ${index + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover
+                              transition-transform duration-700 group-hover:scale-105"
+                  />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition"></div>
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition"></div>
 
-                {/* Optional hover badge */}
-                <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition">
-                  <span className="inline-block bg-yellow-400 text-gray-900 text-xs font-semibold px-4 py-1 rounded-full">
-                    LIMITED OFFER
-                  </span>
+                  {/* Hover badge */}
+                  <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition">
+                    <span className="inline-block bg-yellow-400 text-gray-900 text-xs font-semibold px-4 py-1 rounded-full">
+                      LIMITED OFFER
+                    </span>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -536,7 +542,7 @@ export default function Deposit() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="flex items-center justify-center w-24 h-8">
-                  <img src="/home/BP_Logo.png" alt="Car" className="max-w-full max-h-full object-contain rounded-lg"/>
+                  <img src="/home/BP_Logo.png" alt="BigPay77" className="max-w-full max-h-full object-contain rounded-lg"/>
                 </div>
                 <span className="text-xl font-bold" style={{fontFamily: 'Playfair Display, serif'}}>BigPay77</span>
               </div>

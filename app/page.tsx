@@ -129,7 +129,7 @@ export default function Home() {
               <div className="flex items-center justify-center w-24 h-8 cursor-pointer">
                 <img
                   src="/home/BP_Logo.png"
-                  alt="Logo"
+                  alt="BigPay77"
                   className="max-w-full max-h-full object-contain rounded-lg"
                 />
               </div>
@@ -207,11 +207,13 @@ export default function Home() {
           loop
           muted
           playsInline
+          preload="auto"
+          poster="/about/video-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/home/bigpay.mp4" type="video/mp4" />
+          <source src="/about/BigPay_Banner.mp4" type="video/mp4" />
         </video>
-
+        
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40"></div>
 
@@ -257,40 +259,122 @@ export default function Home() {
 
               {/* CTA */}
               <div className="flex justify-center pt-2">
-                <Link href="/deposit">
-                  <button className="bg-yellow-400 text-gray-900 px-8 py-3 font-semibold
-                    hover:bg-gray-300 transition-colors whitespace-nowrap cursor-pointer">
-                    Learn More
-                  </button>
-                </Link>
+                <a
+                  href="https://bigpay77.net/register/SMSRegister"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-yellow-400 text-gray-900 px-8 py-3 font-semibold
+                            hover:bg-gray-300 transition-colors whitespace-nowrap cursor-pointer text-center"
+                >
+                  Learn More
+                </a>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section ref={statsRef} className="py-16 bg-gray-800">
+      <section id="promotions" ref={promotionsRef} className="py-20 bg-gray-800">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[ 
-              { number: '5000+', label: 'Total Games', icon: 'ri-gamepad-line' },
-              { number: '24/7', label: 'Operation Hour', icon: 'ri-customer-service-line' },
-              { number: '100+', label: 'Player Online Daily', icon: 'ri-user-line' },
-              { number: '$', label: 'Low Entry Requirements', icon: 'ri-money-dollar-circle-line' },
-            ].map((stat, index) => (
-              <div key={index} className={`transform transition-all duration-700 delay-${index * 200} ${statsVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-20 opacity-0 scale-75'}`}>
-                <div className="w-12 h-12 flex items-center justify-center mx-auto mb-4">
-                  {stat.icon.startsWith('ri-') ? (
-                    <i className={`${stat.icon} text-white-500 text-3xl`}></i>
-                  ) : (
-                    <span className="text-3xl">{stat.icon}</span>
-                  )}
-                </div>
-                <div className="text-3xl font-bold text-yellow-400 mb-2">{stat.number}</div>
-                <div className="text-gray-300">{stat.label}</div>
-              </div>
-            ))}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">
+              <span className="text-cyan-400">FEATURED</span><br />
+              Gaming Experience
+            </h2>
+            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+              Discover our premium collection of casino games, live dealers, sports betting, and exciting slots
+            </p>
           </div>
+
+          {/* --- Swiper Carousel Start --- */}
+          <Swiper
+            slidesPerView={3}
+            centeredSlides={true}
+            spaceBetween={16}
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              0: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              640: {
+                slidesPerView: 3,
+                spaceBetween: 12,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+            }}
+            modules={[Pagination, Autoplay]}
+            className="mySwiper"
+          >
+            {promotions.map((item, index) => (
+              <SwiperSlide
+                key={index}
+                className="flex flex-col items-center"
+              >
+
+                {/* ================= 图片区（高度固定） ================= */}
+                <a
+                  href="https://bigpay77.net/register/SMSRegister"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+                    w-full
+                    h-44 sm:h-48 md:h-52
+                    flex items-center justify-center
+                  "
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="
+                      max-h-full
+                      max-w-full
+                      object-contain
+                      transition-transform
+                      duration-300
+                      hover:scale-105
+                      swiper-img
+                    "
+                  />
+                </a>
+
+                {/* ================= 标题区（最小高度锁死） ================= */}
+                <div
+                  className="
+                    mt-3
+                    w-full
+                    min-h-[3rem]
+                    flex
+                    items-start
+                    justify-center
+                    text-center
+                  "
+                >
+                  <p
+                    className="
+                      text-white
+                      text-lg
+                      font-semibold
+                      leading-tight
+                      line-clamp-2
+                    "
+                  >
+                    {item.title}
+                  </p>
+                </div>
+
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          {/* --- Swiper Carousel End --- */}
         </div>
       </section>
 
@@ -326,7 +410,7 @@ export default function Home() {
             <div className="relative">
               <img 
                 src="/home/BigPay_Leader.png"
-                alt="BigPay_Leader"
+                alt="online casino & betting"
                 className="w-full h-auto object-cover rounded-lg shadow-xl"
               />
               <div className="absolute top-4 right-4 bg-cyan-400 text-gray-900 px-4 py-2 rounded-full font-semibold">
@@ -337,60 +421,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="promotions" ref={promotionsRef} className="py-20 bg-gray-800">
+      <section ref={statsRef} className="py-16 bg-gray-800">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="text-cyan-400">FEATURED</span><br />
-              Gaming Experience
-            </h2>
-            <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-              Discover our premium collection of casino games, live dealers, sports betting, and exciting slots
-            </p>
-          </div>
-
-          {/* --- Swiper Carousel Start --- */}
-          <Swiper
-            slidesPerView={1}
-            centeredSlides={false}
-            spaceBetween={16}
-            loop
-            autoplay={{ delay: 2500 }}
-            pagination={{ clickable: true }}
-            breakpoints={{
-              768: {
-                slidesPerView: 3,
-                centeredSlides: true,
-                spaceBetween: 20,
-              },
-            }}
-            modules={[Pagination, Autoplay]}
-            className="mySwiper"
-          >
-            {promotions.map((item, index) => (
-              <SwiperSlide key={index} className="flex justify-center">
-                <div className="flex flex-col items-center w-full swiper-item">
-                  
-                  {/* 图片 */}
-                  <div className="h-44 sm:h-48 md:h-52 flex items-center justify-center transition-transform duration-300">
-                      <img
-                        src={item.image}
-                        alt={item.title}
-                        className="max-h-full max-w-full object-contain"
-                      />
-                    </div>
-                    
-                  {/* 标题 */}
-                  <p className="text-center text-white text-lg font-semibold mt-3">
-                    {item.title}
-                  </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[ 
+              { number: '5000+', label: 'Total Games', icon: 'ri-gamepad-line' },
+              { number: '24/7', label: 'Operation Hour', icon: 'ri-customer-service-line' },
+              { number: '100+', label: 'Player Online Daily', icon: 'ri-user-line' },
+              { number: '$', label: 'Low Entry Requirements', icon: 'ri-money-dollar-circle-line' },
+            ].map((stat, index) => (
+              <div key={index} className={`transform transition-all duration-700 delay-${index * 200} ${statsVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-20 opacity-0 scale-75'}`}>
+                <div className="w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                  {stat.icon.startsWith('ri-') ? (
+                    <i className={`${stat.icon} text-white-500 text-3xl`}></i>
+                  ) : (
+                    <span className="text-3xl">{stat.icon}</span>
+                  )}
                 </div>
-              </SwiperSlide>
+                <div className="text-3xl font-bold text-yellow-400 mb-2">{stat.number}</div>
+                <div className="text-gray-300">{stat.label}</div>
+              </div>
             ))}
-          </Swiper>
-
-
-          {/* --- Swiper Carousel End --- */}
+          </div>
         </div>
       </section>
 
@@ -454,7 +506,7 @@ export default function Home() {
             <div className="relative">
               <img 
                 src="/home/BigPay_Secure.png"
-                alt="BigPay_Secure"
+                alt="e wallet casino"
                 className="w-full h-auto object-cover rounded-lg shadow-xl"
               />
             </div>
@@ -614,7 +666,7 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-2xl group cursor-pointer">
               <img 
                 src="/home/vip.png"
-                alt="Our Professional Service Center"
+                alt="free credit and bonus promotion"
                 className="w-full h-84 object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -731,7 +783,7 @@ export default function Home() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="flex items-center justify-center w-24 h-8">
-                  <img src="/home/BP_Logo.png" alt="Car" className="max-w-full max-h-full object-contain rounded-lg"/>
+                  <img src="/home/BP_Logo.png" alt="BigPay" className="max-w-full max-h-full object-contain rounded-lg"/>
                 </div>
                 <span className="text-xl font-bold" style={{fontFamily: 'Playfair Display, serif'}}>BigPay77</span>
               </div>

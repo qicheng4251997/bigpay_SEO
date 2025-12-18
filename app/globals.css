@@ -2,76 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+/* =========================================================
+   Swiper 基础结构控制
+   ========================================================= */
 
-/* ⭐ Swiper 最外层：隐藏多余图片（左右）、不给 scrollbar */
+/* ⭐ Swiper 外层
+   - 手机端：裁剪，防止露边
+   - 桌面端：允许放大溢出
+*/
 .mySwiper {
-  height: 300px;              /* 你可以根据需要微调 */
-  overflow: hidden !important;
+  height: 300px;                 /* 可根据设计微调 */
+  overflow: hidden;
+  position: relative;
 }
 
-/* ⭐ Swiper 内层允许内容溢出（确保放大时不被裁切） */
-.swiper-wrapper,
-.swiper-slide {
-  overflow: visible !important;
+/* 桌面端允许放大溢出 */
+@media (min-width: 1024px) {
+  .mySwiper {
+    overflow: visible;
+  }
 }
 
-/* ⭐ 每张 Slide 内容置中（让图片垂直水平都在中心） */
-.swiper-slide {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-/* 图片外层 wrapper */
-.img-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-}
-
-/* 图片默认状态 */
-.carousel-img {
-  height: 220px;              /* 图片高度（你可以调整） */
-  object-fit: contain;
-  transition: transform 0.28s ease, filter 0.28s ease;
-  transform-origin: center center;
-  z-index: 2;
-}
-
-/* Hover 放大 & 柔焦 */
-.carousel-img:hover {
-  transform: scale(1.2);
-  filter: blur(1px);
-  z-index: 50;
-}
-
-.mySwiper,
+/* Swiper 内层始终允许溢出（给图片放大用） */
 .mySwiper .swiper-wrapper,
 .mySwiper .swiper-slide {
   overflow: visible;
 }
 
-/* 默认状态 */
+/* Slide 本身只负责排版，不做任何 scale */
 .mySwiper .swiper-slide {
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* 当前激活的那张 */
-.mySwiper .swiper-slide-active {
-  transform: scale(1.1);
+/* =========================================================
+   图片放大逻辑（唯一的 scale 来源）
+   ========================================================= */
+
+/* 默认状态 */
+.mySwiper .swiper-img {
+  height: 220px;                 /* 图片基础高度 */
+  max-width: 100%;
+  object-fit: contain;
+  transform: scale(0.9);
+  opacity: 0.6;
+  transition:
+    transform 0.28s ease,
+    opacity 0.28s ease;
+  transform-origin: center center;
+}
+
+/* 当前激活（中间） */
+.mySwiper .swiper-slide-active .swiper-img {
+  transform: scale(1.08);
   opacity: 1;
 }
 
-/* 左右两张（可选，更细腻） */
-.mySwiper .swiper-slide-prev,
-.mySwiper .swiper-slide-next {
+/* 左右相邻 */
+.mySwiper .swiper-slide-prev .swiper-img,
+.mySwiper .swiper-slide-next .swiper-img {
   transform: scale(0.95);
   opacity: 0.85;
 }
 
-html, body {
+/* =========================================================
+   桌面端 Hover 效果（可选）
+   ========================================================= */
+
+/* 只有支持 hover 的设备才生效（不会影响手机） */
+@media (hover: hover) {
+  .mySwiper .swiper-img:hover {
+    transform: scale(1.15);
+  }
+}
+
+/* =========================================================
+   防止横向滚动条（Swiper + 放大常见）
+   ========================================================= */
+
+html,
+body {
   width: 100%;
   overflow-x: hidden;
 }

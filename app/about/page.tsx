@@ -111,7 +111,7 @@ export default function About() {
       name: 'Mega888 App',
       role: 'A cornerstone of the Asian online slot industry, recognized for its stability, quality, and long-term presence.',
       experience: 'Founded in 2018',
-      image: '/about/Mega888.png'
+      image: '/about/Mega888_Partner.png'
     }
   ];
 
@@ -150,7 +150,7 @@ export default function About() {
               <div className="flex items-center justify-center w-24 h-8 cursor-pointer">
                 <img
                   src="/home/BP_Logo.png"
-                  alt="Logo"
+                  alt="BigPay77"
                   className="max-w-full max-h-full object-contain rounded-lg"
                 />
               </div>
@@ -286,7 +286,7 @@ export default function About() {
             <div className={`relative transform transition-all duration-1000 delay-300 ${storyVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
               <img 
                 src="/promotions/Bigpay77.png"
-                alt="Our Journey"
+                alt="BigPay77"
                 className="w-full h-auto object-cover rounded-lg shadow-xl"
               />
             </div>
@@ -369,7 +369,7 @@ export default function About() {
             <div className="relative">
               <img 
                 src="/about/BigPay_Experience.png"
-                alt="Professional Service"
+                alt="australia online casino & betting"
                 className="w-full h-auto object-cover rounded-lg shadow-xl"
               />
               <div className="absolute -bottom-6 -right-6 bg-cyan-400 text-gray-900 px-6 py-4 rounded-lg font-bold text-xl">

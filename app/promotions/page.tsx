@@ -126,7 +126,7 @@ export default function Promotions() {
               <div className="flex items-center justify-center w-24 h-8 cursor-pointer">
                 <img
                   src="/home/BP_Logo.png"
-                  alt="Logo"
+                  alt="BigPay77"
                   className="max-w-full max-h-full object-contain rounded-lg"
                 />
               </div>
@@ -246,13 +246,33 @@ export default function Promotions() {
                 className={`bg-gray-900 rounded-xl overflow-hidden shadow-xl hover:shadow-cyan-400/20 transition-all duration-500 transform hover:-translate-y-2 ${promotionsVisible ? `translate-y-0 opacity-100 scale-100 transition-all duration-700 delay-${index * 100}` : 'translate-y-20 opacity-0 scale-95'}`}
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={promotion.image}
-                    alt={promotion.title}
-                    className="w-full h-full object-cover object-center hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
-                  <div className="absolute top-4 left-4 w-12 h-12 bg-cyan-400 text-gray-900 rounded-full flex items-center justify-center">
+                  <a
+                    href="https://bigpay77.net/register/SMSRegister"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full h-full group"
+                  >
+                    <img 
+                      src={promotion.image}
+                      alt={promotion.title}
+                      className="w-full h-full object-cover object-center
+                                transition-transform duration-500 group-hover:scale-110"
+                    />
+
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+
+                    {/* Hover 文案（可选） */}
+                    <div className="absolute inset-0 flex items-center justify-center
+                                    opacity-0 group-hover:opacity-100 transition">
+                      <span className="bg-cyan-400 text-gray-900 text-sm font-bold px-5 py-2 rounded-full">
+                        REGISTER NOW
+                      </span>
+                    </div>
+                  </a>
+
+                  {/* Icon 保持在外层也没问题 */}
+                  <div className="absolute top-4 left-4 w-12 h-12 bg-cyan-400 text-gray-900 rounded-full flex items-center justify-center pointer-events-none">
                     <i className={`${promotion.icon} text-xl`}></i>
                   </div>
                 </div>
@@ -317,7 +337,7 @@ export default function Promotions() {
             <div className={`relative transform transition-all duration-1000 delay-300 ${detailsVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
               <img 
                 src="/promotions/Bigpay77.png"
-                alt="Professional Service"
+                alt="BigPay77"
                 className="w-full h-auto object-cover rounded-xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 bg-green-400 text-gray-900 px-6 py-4 rounded-lg font-bold text-lg">
@@ -420,7 +440,7 @@ export default function Promotions() {
             <div>
               <div className="flex items-center space-x-2 mb-4">
                 <div className="flex items-center justify-center w-24 h-8">
-                  <img src="/home/BP_Logo.png" alt="Car" className="max-w-full max-h-full object-contain rounded-lg"/>
+                  <img src="/home/BP_Logo.png" alt="BigPay77" className="max-w-full max-h-full object-contain rounded-lg"/>
                 </div>
                 <span className="text-xl font-bold" style={{fontFamily: 'Playfair Display, serif'}}>BigPay77</span>
               </div>
