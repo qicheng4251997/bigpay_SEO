@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ⭐ Swiper 最外层：隐藏多余图片（左右）、不给 scrollbar */
+.mySwiper {
+  height: 300px;              /* 你可以根据需要微调 */
+  overflow: hidden !important;
+}
+
+/* ⭐ Swiper 内层允许内容溢出（确保放大时不被裁切） */
+.swiper-wrapper,
+.swiper-slide {
+  overflow: visible !important;
+}
+
+/* ⭐ 每张 Slide 内容置中（让图片垂直水平都在中心） */
+.swiper-slide {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* 图片外层 wrapper */
+.img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* 图片默认状态 */
+.carousel-img {
+  height: 220px;              /* 图片高度（你可以调整） */
+  object-fit: contain;
+  transition: transform 0.28s ease, filter 0.28s ease;
+  transform-origin: center center;
+  z-index: 2;
+}
+
+/* Hover 放大 & 柔焦 */
+.carousel-img:hover {
+  transform: scale(1.2);
+  filter: blur(1px);
+  z-index: 50;
+}
+
+.mySwiper,
+.mySwiper .swiper-wrapper,
+.mySwiper .swiper-slide {
+  overflow: visible;
+}
+
+/* 默认状态 */
+.mySwiper .swiper-slide {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+/* 当前激活的那张 */
+.mySwiper .swiper-slide-active {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* 左右两张（可选，更细腻） */
+.mySwiper .swiper-slide-prev,
+.mySwiper .swiper-slide-next {
+  transform: scale(0.95);
+  opacity: 0.85;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
