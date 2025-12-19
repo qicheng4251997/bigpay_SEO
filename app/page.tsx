@@ -211,7 +211,7 @@ export default function Home() {
           poster="/about/video-poster.jpg"
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/about/BigPay_Banner.mp4" type="video/mp4" />
+          <source src="/home/bigpay.mp4" type="video/mp4" />
         </video>
         
         {/* Overlay */}
