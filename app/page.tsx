@@ -134,70 +134,73 @@ export default function Home() {
                 />
               </div>
             </Link>
-            <span className="text-xl font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <span
+              className="text-xl font-bold text-white"
+              style={{ fontFamily: 'Playfair Display, serif' }}
+            >
               BigPay77
             </span>
           </div>
-          {/* Navigation + Button */}
+
+          {/* Desktop */}
           <div className="hidden md:flex items-center space-x-6">
-            <nav className="flex space-x-8">
-              <Link href="/" className="hover:text-cyan-400 transition-colors cursor-pointer">Home</Link>
-              <Link href="/promotions" className="hover:text-cyan-400 transition-colors cursor-pointer">Promotions</Link>
-              <Link href="/about" className="hover:text-cyan-400 transition-colors cursor-pointer">About</Link>
-              <Link href="/deposit" className="hover:text-cyan-400 transition-colors cursor-pointer">Deposit</Link>
+            <nav className="flex space-x-8 text-white">
+              <Link href="/" className="hover:text-cyan-400">Home</Link>
+              <Link href="/promotions" className="hover:text-cyan-400">Promotions</Link>
+              <Link href="/about" className="hover:text-cyan-400">About</Link>
+              <Link href="/deposit" className="hover:text-cyan-400">Deposit</Link>
             </nav>
 
-            {/* 黄色按钮 */}
             <Link
               href="https://bigpay77.net/register/SMSRegister"
-              className="bg-cyan-400 text-gray-900 px-6 py-2 font-semibold rounded-md hover:bg-gray-300 transition-colors"
+              className="bg-cyan-400 text-gray-900 px-6 py-2 font-semibold rounded-md"
             >
               REGISTER
             </Link>
           </div>
 
-          {/* Mobile Menu Icon */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="w-8 h-8 flex items-center justify-center md:hidden text-white"
-          >
-            <i className={`ri-${mobileOpen ? "close" : "menu"}-line text-2xl`} />
-          </button>
+          {/* Mobile Right */}
+          <div className="flex items-center space-x-3 md:hidden">
+            <Link
+              href="https://bigpay77.net/register/SMSRegister"
+              className="bg-cyan-400 text-gray-900 px-4 py-1.5 text-sm font-semibold rounded-md"
+            >
+              REGISTER
+            </Link>
 
-          {/* Mobile Menu (Right Top) */}
-          {mobileOpen && (
-            <div className="absolute right-4 top-full mt-2 w-56 
-                            bg-white/10 backdrop-blur-md text-white 
-                            rounded-xl shadow-xl border border-white/20 
-                            md:hidden z-60">
-              <nav className="flex flex-col px-5 py-4 space-y-4 text-sm">
-                <Link href="/" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">
-                  Home
-                </Link>
-                <Link href="/promotions" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">
-                  Promotions
-                </Link>
-                <Link href="/about" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">
-                  About
-                </Link>
-                <Link href="/deposit" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">
-                  Deposit
-                </Link>
-
-                <Link
-                  href="https://bigpay77.net/register/SMSRegister"
-                  onClick={() => setMobileOpen(false)}
-                  className="mt-3 bg-cyan-400/90 text-gray-900 px-4 py-2 
-                            font-semibold rounded-md text-center hover:bg-cyan-400"
-                >
-                  REGISTER
-                </Link>
-              </nav>
-            </div>
-          )}
-
-
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="w-8 h-8 flex items-center justify-center text-white"
+            >
+              <i className={`ri-${mobileOpen ? "close" : "menu"}-line text-2xl`} />
+            </button>
+          </div>
         </div>
+
+        {/* ✅ Dropdown：明确避开 Header */}
+        {mobileOpen && (
+          <div
+            className="absolute right-4 top-[72px] w-56 
+                      bg-white/10 backdrop-blur-md text-white 
+                      rounded-xl shadow-xl border border-white/20 
+                      md:hidden z-40"
+          >
+            <nav className="flex flex-col px-5 py-4 space-y-4 text-sm">
+              <Link href="/" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">
+                Home
+              </Link>
+              <Link href="/promotions" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">
+                Promotions
+              </Link>
+              <Link href="/about" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">
+                About
+              </Link>
+              <Link href="/deposit" onClick={() => setMobileOpen(false)} className="hover:text-cyan-400">
+                Deposit
+              </Link>
+            </nav>
+          </div>
+        )}
       </header>
 
       <section className="relative min-h-screen pt-20 flex items-center justify-center overflow-hidden">
