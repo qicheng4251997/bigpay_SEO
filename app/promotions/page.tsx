@@ -153,13 +153,13 @@ export default function Promotions() {
             <div className="flex space-x-2">
               <Link
                 href="https://bigpay77.net/register/SMSRegister"
-                className="bg-cyan-400 text-gray-900 px-6 py-2 font-semibold rounded-md"
+                className="bg-cyan-400 text-gray-900 px-6 py-2 font-semibold rounded-md hover:bg-gray-400"
               >
                 REGISTER
               </Link>
               <Link
                 href="https://bigpay77.net/login" // 修改为你的登录链接
-                className="bg-gray-700 text-white px-6 py-2 font-semibold rounded-md hover:bg-gray-600"
+                className="bg-cyan-400 text-gray-900 px-6 py-2 font-semibold rounded-md hover:bg-gray-400"
               >
                 LOGIN
               </Link>
@@ -171,13 +171,13 @@ export default function Promotions() {
             {/* Register + New Button */}
             <Link
               href="https://bigpay77.net/register/SMSRegister"
-              className="bg-cyan-400 text-gray-900 px-4 py-1.5 text-sm font-semibold rounded-md"
+              className="bg-cyan-400 text-gray-900 px-4 py-1.5 text-sm font-semibold rounded-md hover:bg-gray-400"
             >
               REGISTER
             </Link>
             <Link
               href="https://bigpay77.net/login"
-              className="bg-gray-700 text-white px-4 py-1.5 text-sm font-semibold rounded-md hover:bg-gray-600"
+              className="bg-cyan-400 text-gray-900 px-4 py-1.5 text-sm font-semibold rounded-md hover:bg-gray-400"
             >
               LOGIN
             </Link>
