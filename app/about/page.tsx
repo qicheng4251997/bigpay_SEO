@@ -155,16 +155,17 @@ export default function About() {
                 />
               </div>
             </Link>
+            {/* 桌面端显示文字，移动端隐藏 */}
             <span
-              className="text-xl font-bold text-white"
+              className="hidden md:inline text-xl font-bold text-white"
               style={{ fontFamily: 'Playfair Display, serif' }}
             >
               BigPay77
             </span>
           </div>
 
-          {/* Desktop */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* Desktop Buttons & Nav */}
+          <div className="hidden md:flex items-center space-x-4">
             <nav className="flex space-x-8 text-white">
               <Link href="/" className="hover:text-cyan-400">Home</Link>
               <Link href="/promotions" className="hover:text-cyan-400">Promotions</Link>
@@ -172,21 +173,37 @@ export default function About() {
               <Link href="/deposit" className="hover:text-cyan-400">Deposit</Link>
             </nav>
 
-            <Link
-              href="https://bigpay77.net/register/SMSRegister"
-              className="bg-cyan-400 text-gray-900 px-6 py-2 font-semibold rounded-md"
-            >
-              REGISTER
-            </Link>
+            {/* Register + New Button */}
+            <div className="flex space-x-2">
+              <Link
+                href="https://bigpay77.net/register/SMSRegister"
+                className="bg-cyan-400 text-gray-900 px-6 py-2 font-semibold rounded-md"
+              >
+                REGISTER
+              </Link>
+              <Link
+                href="https://bigpay77.net/login" // 修改为你的登录链接
+                className="bg-gray-700 text-white px-6 py-2 font-semibold rounded-md hover:bg-gray-600"
+              >
+                LOGIN
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Right */}
-          <div className="flex items-center space-x-3 md:hidden">
+          <div className="flex items-center space-x-2 md:hidden">
+            {/* Register + New Button */}
             <Link
               href="https://bigpay77.net/register/SMSRegister"
               className="bg-cyan-400 text-gray-900 px-4 py-1.5 text-sm font-semibold rounded-md"
             >
               REGISTER
+            </Link>
+            <Link
+              href="https://bigpay77.net/login"
+              className="bg-gray-700 text-white px-4 py-1.5 text-sm font-semibold rounded-md hover:bg-gray-600"
+            >
+              LOGIN
             </Link>
 
             <button
@@ -198,7 +215,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* ✅ Dropdown：明确避开 Header */}
+        {/* Mobile Dropdown */}
         {mobileOpen && (
           <div
             className="absolute right-4 top-[72px] w-56 
