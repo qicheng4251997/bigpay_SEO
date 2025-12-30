@@ -252,7 +252,7 @@ export default function Promotions() {
         <div className="max-w-6xl mx-auto px-6">
           <div className={`text-center mb-16 transform transition-all duration-1000 ${promotionsVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <h2 className="text-4xl font-bold mb-4">
-              COMPLETE <span className="text-cyan-400">PROMOTION</span> LIST
+              ATTRACTIVE <span className="text-cyan-400">PROMOTION</span> LIST
             </h2>
             <p className="text-gray-300 text-lg max-w-2xl mx-auto">
               Explore our full range of free credits, bonuses, and special offers—designed to give you more value, more rewards, and more fun.
